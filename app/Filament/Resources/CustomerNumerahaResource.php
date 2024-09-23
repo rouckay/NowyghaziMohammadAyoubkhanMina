@@ -14,7 +14,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\imageColumn;
+use Filament\Tables\Columns\ImageColumn;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\HtmlString;
@@ -321,12 +321,12 @@ class CustomerNumerahaResource extends Resource
                                         $set('numeraha_details', null);
                                     }
                                     // The Numerah Details fetcing is finished -------------------------------------------------------------------------------------------
-                    
+
 
 
                                     // Initially disable createOptionForm
                                     // $set('can_create_option', false);
-                    
+
                                     // if ($numeraha) {
                                     //     // Check if any of the specified fields are empty
                                     //     if (empty($numeraha->north) || empty($numeraha->south) || empty($numeraha->east) || empty($numeraha->west)) {
@@ -532,9 +532,9 @@ class CustomerNumerahaResource extends Resource
                             ->label('باقی پیسی')
                             ->content(function ($get) {
                                 // badge is started here
-                    
+
                                 // Logic to return content with a badge
-                    
+
                                 $payed_price = $get('payed_price') ?? 0;
                                 $total_price = $get('total_price') ?? 0;
 
@@ -602,7 +602,7 @@ class CustomerNumerahaResource extends Resource
                     ->toggleable()
                     ->label('د نمری (ځمکی) آی ډی')
                     ->sortable(),
-                imageColumn::make('multipleDocs')
+                ImageColumn::make('multipleDocs')
                     ->label('د نمری (ځمکی) اسناد')
                     ->toggleable(isToggledHiddenByDefault: true),
                 TextColumn::make('remarks')
