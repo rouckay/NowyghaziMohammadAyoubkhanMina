@@ -2,34 +2,36 @@
 
 namespace App\Filament\Resources;
 
+use Filament\Forms;
+use Filament\Tables;
+use Filament\Forms\Set;
+use App\Models\Numeraha;
+use Filament\Forms\Form;
+use App\Models\Customers;
+use Filament\Tables\Table;
+use Filament\Support\RawJs;
+use Illuminate\Support\Str;
+use App\Models\CustomerNumeraha;
+use Filament\Resources\Resource;
+use Illuminate\Support\HtmlString;
+use Filament\Forms\Components\Card;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Select;
+use Filament\Support\Enums\ActionSize;
+use Filament\Forms\Components\Repeater;
+use Filament\Tables\Columns\TextColumn;
+use Illuminate\Support\Facades\Storage;
+use Filament\Forms\Components\TextInput;
+use Filament\Tables\Columns\ImageColumn;
+use Filament\Forms\Components\FileUpload;
+use Illuminate\Database\Eloquent\Builder;
+use Filament\Forms\Components\Placeholder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\CustomerNumerahaResource\Pages;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use App\Filament\Resources\CustomerNumerahaResource\RelationManagers;
 use App\Filament\Resources\CustomerNumerahaResource\RelationManagers\CustomersRelationManager;
-use App\Models\CustomerNumeraha;
-use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\FileUpload;
-use Filament\Resources\Resource;
-use Filament\Tables;
-use Filament\Tables\Table;
-use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Columns\ImageColumn;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
-use Illuminate\Support\HtmlString;
-use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
-use Filament\Support\RawJs;
-use App\Models\Customers;
-use Filament\Forms\Set;
-use Illuminate\Support\Str;
-use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\Card;
-use Filament\Forms\Components\Repeater;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Placeholder;
-use App\Models\Numeraha;
-use Illuminate\Support\Facades\Storage;
+
 class CustomerNumerahaResource extends Resource
 {
     protected static ?string $model = CustomerNumeraha::class;
@@ -152,7 +154,15 @@ class CustomerNumerahaResource extends Resource
                                             ->uploadingMessage('د مشتری عکس د اپلوډ په حال کی دی...')
                                             ->previewable()
                                             ->required()
-                                            ->label('د مشتری انځور'),
+                                            ->label('د مشتری انځور')
+                                            ->image()
+                                            ->imageEditor()
+                                            ->imageEditorAspectRatios([
+                                                null,
+                                                '16:9',
+                                                '4:3',
+                                                '1:1',
+                                            ]),
                                     ])->columnSpan(6),
                                     Grid::make()->schema([
                                         TextInput::make('grand_father_name')
@@ -255,7 +265,15 @@ class CustomerNumerahaResource extends Resource
                                             ->uploadingMessage('د مشتری عکس د اپلوډ په حال کی دی...')
                                             ->previewable()
                                             ->required()
-                                            ->label('د مشتری د وکیل انځور'),
+                                            ->label('د مشتری د وکیل انځور')
+                                            ->image()
+                                            ->imageEditor()
+                                            ->imageEditorAspectRatios([
+                                                null,
+                                                '16:9',
+                                                '4:3',
+                                                '1:1',
+                                            ]),
                                     ])->columnSpan(6),
                                     Grid::make()->schema([
                                         TextInput::make('responsable_grand_father_name')
@@ -633,25 +651,31 @@ class CustomerNumerahaResource extends Resource
                     ->label('کتل'),
                 Tables\Actions\EditAction::make()
                     ->label('بدلون'),
-                Tables\Actions\ButtonAction::make('downloadInvoice')
-                    ->label('تعرفه ترلاسه کړی')
-                    ->url(fn(CustomerNumeraha $record) => route('download.invoice', $record)) // Use route to generate URL
-                    ->icon('heroicon-o-printer')
+                \Filament\Tables\Actions\ActionGroup::make([
+                    Tables\Actions\Action::make('downloadInvoice')
+                        ->label('تعرفه ترلاسه کړی')
+                        ->url(fn(CustomerNumeraha $record) => route('download.invoice', $record)) // Use route to generate URL
+                        ->icon('heroicon-o-printer')
+                        ->color('primary')
+                        ->requiresConfirmation()
+                    ,
+                    Tables\Actions\Action::make('downloadsoldDocs')
+                        ->label('سند PDF فایل')
+                        ->url(fn(CustomerNumeraha $record) => route('download.soldDocs', $record)) // Use route to generate URL
+                        ->icon(icon: 'heroicon-o-printer')
+                        ->color('success')
+                        ->requiresConfirmation(),
+                    Tables\Actions\Action::make('downloadsoldDocs')
+                        ->label('سند  word فایل')
+                        ->url(fn(CustomerNumeraha $record) => route('download.word', $record)) // Use route to generate URL
+                        ->icon(icon: 'heroicon-o-printer')
+                        ->color('success')
+                        ->requiresConfirmation(),
+                ])->label('سند دنلوډ کړی')
+                    ->icon('heroicon-m-ellipsis-vertical')
+                    ->size(ActionSize::Small)
                     ->color('primary')
-                    ->requiresConfirmation()
-                ,
-                Tables\Actions\ButtonAction::make('downloadsoldDocs')
-                    ->label('سند ترلاسه کړی')
-                    ->url(fn(CustomerNumeraha $record) => route('download.soldDocs', $record)) // Use route to generate URL
-                    ->icon(icon: 'heroicon-o-printer')
-                    ->color('success')
-                    ->requiresConfirmation(),
-                Tables\Actions\ButtonAction::make('downloadsoldDocs')
-                    ->label('سند ورډ فایل ترلاسه کړی')
-                    ->url(fn(CustomerNumeraha $record) => route('download.word', $record)) // Use route to generate URL
-                    ->icon(icon: 'heroicon-o-printer')
-                    ->color('success')
-                    ->requiresConfirmation(),
+                    ->button()
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

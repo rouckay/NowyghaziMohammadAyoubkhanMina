@@ -280,15 +280,15 @@ class NumerahaResource extends Resource
                     //     ->label('به اساس مشتری')
                     //     ->relationship('customers', 'name'),
                     //  layout: FiltersLayout::AboveContent
-                    TernaryFilter::make('پلورل شوی نمری (ځمکی)')
-                        ->label('د نمرو (ځمکو) فلتر')
-                        ->placeholder('د فلتر انتخاب')
-                        ->trueLabel('پلورل شوی نمری (ځمکی)')
-                        ->falseLabel(' هغه نمری (ځمکی) جی ندی پلورل شوی.')
-                        ->queries(
-                            true: fn(Builder $query) => $query->whereHas('customers'),
-                            false: fn(Builder $query) => $query->whereDoesntHave('customers')
-                        ),
+                    // TernaryFilter::make('پلورل شوی نمری (ځمکی)')
+                    //     ->label('د نمرو (ځمکو) فلتر')
+                    //     ->placeholder('د فلتر انتخاب')
+                    //     ->trueLabel('پلورل شوی نمری (ځمکی)')
+                    //     ->falseLabel(' هغه نمری (ځمکی) جی ندی پلورل شوی.')
+                    //     ->queries(
+                    //         true: fn(Builder $query) => $query->whereHas('customers'),
+                    //         false: fn(Builder $query) => $query->whereDoesntHave('customers')
+                    //     ),
                     // Filter::make('هغه نمری (ځمکی) چی نه دی پلورل شوی.')
                     //     ->query(fn(Builder $query) => $query->where(function ($query) {
                     //         $query->where('customer_id', '=', 0)
