@@ -171,49 +171,7 @@
                 <td>د موبایل شمیره</td>
                 <td colspan="4">{{$mobile_number }}</td>
             </tr>
-            <tr>
-                <td rowspan="10" style="text-align:center; vertical-align:middle;">
-                    <img style="display: block; margin-left: auto; margin-right: auto;"
-                        src="{{ asset('storage/' . $responsable_image) }}" height="180px" width="180px" />
-                </td>
-                <td colspan="5">د پیرودونکی د وکیل معلومات</td>
-            </tr>
-            <tr>
-                <td>نوم</td>
-                <td colspan="4">{{$responsable_name }}</td>
-            </tr>
-            <tr>
-                <td>د پلار نوم</td>
-                <td colspan="4">{{$responsable_father_name }}</td>
-            </tr>
-            <tr>
-                <td>د نیکه نوم</td>
-                <td colspan="4">{{$responsable_grand_father_name }}</td>
-            </tr>
-            <tr>
-                <td>ولایت</td>
-                <td colspan="4">{{$responsable_province }}</td>
-            </tr>
-            <tr>
-                <td>ولسوالی</td>
-                <td colspan="4">{{$responsable_village }}</td>
-            </tr>
-            <tr>
-                <td>کلی</td>
-                <td colspan="4">{{$responsable_village }}</td>
-            </tr>
-            <tr>
-                <td>وظیفه</td>
-                <td colspan="4">{{$responsable_job }}</td>
-            </tr>
-            <tr>
-                <td>د تذکری شمیره</td>
-                <td colspan="4">{{$responsable_tazkira }}</td>
-            </tr>
-            <tr>
-                <td>د موبایل شمیره</td>
-                <td colspan="4">{{$responsable_mobile_number }}</td>
-            </tr>
+
             <tr>
                 <td rowspan="8">
                     د نمری معلومات
@@ -272,7 +230,6 @@
                 <td>د شرکت د مدیر لاسلیک</td>
                 <td colspan="2">د شرکت د ریئس لاسلیک او مهر</td>
                 <td colspan="2">د پیرودونکی لاسلیک او د شست</td>
-                <td colspan="2">د پیرودونکی د وکیل لاسلیک او د شست</td>
             </tr>
             <tr>
                 <td></td>

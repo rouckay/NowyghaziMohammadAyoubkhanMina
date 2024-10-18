@@ -10117,16 +10117,16 @@
         },
         {
             "name": "spatie/robots-txt",
-            "version": "2.2.1",
+            "version": "2.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/robots-txt.git",
-                "reference": "db55c5f4aef0bd8576b03b80dc3ede3d176b9cdf"
+                "reference": "560d6d1776ee3a13af26ac4e04171a5d32f3923f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/robots-txt/zipball/db55c5f4aef0bd8576b03b80dc3ede3d176b9cdf",
-                "reference": "db55c5f4aef0bd8576b03b80dc3ede3d176b9cdf",
+                "url": "https://api.github.com/repos/spatie/robots-txt/zipball/560d6d1776ee3a13af26ac4e04171a5d32f3923f",
+                "reference": "560d6d1776ee3a13af26ac4e04171a5d32f3923f",
                 "shasum": ""
             },
             "require": {
@@ -10161,7 +10161,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/robots-txt/issues",
-                "source": "https://github.com/spatie/robots-txt/tree/2.2.1"
+                "source": "https://github.com/spatie/robots-txt/tree/2.2.2"
             },
             "funding": [
                 {
@@ -10173,7 +10173,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-08-09T09:07:48+00:00"
+            "time": "2024-09-25T08:55:09+00:00"
         },
         {
             "name": "spatie/temporary-directory",
@@ -10537,16 +10537,16 @@
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v7.1.1",
+            "version": "v7.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dom-crawler.git",
-                "reference": "01ce8174447f1f1dd33a5854b01beef79061d9fa"
+                "reference": "b92af238457a7cdd2738f941cd525d76313e8283"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/01ce8174447f1f1dd33a5854b01beef79061d9fa",
-                "reference": "01ce8174447f1f1dd33a5854b01beef79061d9fa",
+                "url": "https://api.github.com/repos/symfony/dom-crawler/zipball/b92af238457a7cdd2738f941cd525d76313e8283",
+                "reference": "b92af238457a7cdd2738f941cd525d76313e8283",
                 "shasum": ""
             },
             "require": {
@@ -10584,7 +10584,7 @@
             "description": "Eases DOM navigation for HTML and XML documents",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/dom-crawler/tree/v7.1.1"
+                "source": "https://github.com/symfony/dom-crawler/tree/v7.1.5"
             },
             "funding": [
                 {
@@ -10600,7 +10600,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-05-31T14:57:53+00:00"
+            "time": "2024-09-15T06:48:17+00:00"
         },
         {
             "name": "symfony/error-handler",
@@ -12928,22 +12928,22 @@
         },
         {
             "name": "tomatophp/filament-pwa",
-            "version": "v1.0.0",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tomatophp/filament-pwa.git",
-                "reference": "2280d26a9fbe242dab395fa39b7cfe83fc9ae96b"
+                "reference": "dd87a0c8145fe4b3151e350fb2a4fbcfade24611"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tomatophp/filament-pwa/zipball/2280d26a9fbe242dab395fa39b7cfe83fc9ae96b",
-                "reference": "2280d26a9fbe242dab395fa39b7cfe83fc9ae96b",
+                "url": "https://api.github.com/repos/tomatophp/filament-pwa/zipball/dd87a0c8145fe4b3151e350fb2a4fbcfade24611",
+                "reference": "dd87a0c8145fe4b3151e350fb2a4fbcfade24611",
                 "shasum": ""
             },
             "require": {
-                "filament/filament": "^3.0",
-                "filament/notifications": "^3.0",
-                "filament/spatie-laravel-settings-plugin": "^3.0",
+                "filament/filament": "^3.2",
+                "filament/notifications": "^3.2",
+                "filament/spatie-laravel-settings-plugin": "^3.2",
                 "php": "^8.1|^8.2",
                 "tomatophp/console-helpers": "^1.1",
                 "tomatophp/filament-settings-hub": "^1.0"
@@ -12982,7 +12982,7 @@
             ],
             "support": {
                 "issues": "https://github.com/tomatophp/filament-pwa/issues",
-                "source": "https://github.com/tomatophp/filament-pwa/tree/v1.0.0"
+                "source": "https://github.com/tomatophp/filament-pwa/tree/v1.0.2"
             },
             "funding": [
                 {
@@ -12990,20 +12990,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-07-31T15:23:26+00:00"
+            "time": "2024-09-11T13:00:37+00:00"
         },
         {
             "name": "tomatophp/filament-settings-hub",
-            "version": "v1.0.5",
+            "version": "v1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tomatophp/filament-settings-hub.git",
-                "reference": "7a43b3f8efbe491bdd1c095206a5a6521b343c50"
+                "reference": "9b9d450379561dfad492e1d95ee478ead86b12d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tomatophp/filament-settings-hub/zipball/7a43b3f8efbe491bdd1c095206a5a6521b343c50",
-                "reference": "7a43b3f8efbe491bdd1c095206a5a6521b343c50",
+                "url": "https://api.github.com/repos/tomatophp/filament-settings-hub/zipball/9b9d450379561dfad492e1d95ee478ead86b12d0",
+                "reference": "9b9d450379561dfad492e1d95ee478ead86b12d0",
                 "shasum": ""
             },
             "require": {
@@ -13048,7 +13048,7 @@
             ],
             "support": {
                 "issues": "https://github.com/tomatophp/filament-settings-hub/issues",
-                "source": "https://github.com/tomatophp/filament-settings-hub/tree/v1.0.5"
+                "source": "https://github.com/tomatophp/filament-settings-hub/tree/v1.0.9"
             },
             "funding": [
                 {
@@ -13056,7 +13056,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-07-30T15:40:59+00:00"
+            "time": "2024-09-17T16:42:59+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
